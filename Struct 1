@@ -1,0 +1,42 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	struct Student {
+		string   NAME;
+		int Group;
+		int SES[5];
+		double sr_ball;
+	};
+	Student a[3];
+	float m_b = 4;
+	for (int i = 0; i < 3; i++) {
+		cout << "Vvedite NAME " << endl;
+		cin >> a[i].NAME;
+		cout << "Vvedite ocenki " << endl;
+		cin >> a[i].SES[1] >> a[i].SES[2] >> a[i].SES[3] >> a[i].SES[4] >> a[i].SES[5];
+		a[i].sr_ball = double((a[i].SES[1] + a[i].SES[2] + a[i].SES[3] + a[i].SES[4] + a[i].SES[5]) / 5);
+	}
+	for (int i = 0; i < 3; i++) {
+		if (a[i].sr_ball >= m_b) {
+			m_b = a[i].sr_ball;
+		}
+
+	}
+	for (int i = 0; i < 3; i++) {
+		if (a[i].sr_ball == m_b) {
+			cout << a[i].NAME << "Srednij ball = " << a[i].sr_ball << endl;
+		}
+		else
+		{
+			cout << "Takih studentov net";
+		}
+	}
+
+	return 0;
+}
