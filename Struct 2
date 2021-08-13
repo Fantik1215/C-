@@ -1,0 +1,34 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+struct Student
+{
+	string name;
+	int point[3];
+};
+
+void disData(Student p)
+{
+	cout << p.name << endl;
+	double sr_ball;
+	sr_ball = (p.point[0] + p.point[1] + p.point[2]) / 3;
+	int stip;
+	stip = 10 * sr_ball;
+	cout << "Stipendiya " << stip;
+};
+
+int main()
+{
+	Student p;
+
+	cout << "vvedite imya ";
+	cin >> p.name;
+	cout << "vvedite ocenki";
+	cin >> p.point[0];
+	cin >> p.point[1];
+	cin >> p.point[2];
+	disData(p);
+
+	return 0;
+}
