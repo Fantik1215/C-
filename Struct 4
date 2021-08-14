@@ -1,0 +1,56 @@
+#include <iostream>
+#include <windows.h>
+#include <clocale>
+using namespace std;
+
+void main()
+{
+	struct Obem
+	{
+		unsigned int Ob1;
+		unsigned int Ob2;
+		unsigned int Ob3;
+	};
+	struct Person
+	{
+		string Name;
+		unsigned int Year;
+		unsigned int Rost;
+		unsigned int Ves;
+		int Angl;
+		Obem Ob;
+	} A[5];
+	int  i, k;
+	for (i = 0; i < 5; i++)
+	{
+		cout << "Enter name:\n" << endl;
+		cin >> A[i].Name;
+		cout << endl;
+		cout << "Enter Year:\n" << endl;
+		cin >> A[i].Year;
+		cout << endl;
+		cout << "Enter Rost:\n" << endl;
+		cin >> A[i].Rost;
+		cout << endl;
+		cout << "Enter Vesr:\n" << endl;
+		cin >> A[i].Ves;
+		cout << endl;
+		cout << "Enter Objemi:\n" << endl;
+		cin >> A[i].Ob.Ob1;
+		cin >> A[i].Ob.Ob2;
+		cin >> A[i].Ob.Ob3;
+		cout << endl;
+		cout << "Enter English(0 or 1):\n" << endl;
+		cin >> A[i].Angl;
+		cout << endl;
+		cout << "\n-----------------------\n" << endl;
+	}
+	cout << "\n Name\t Vozrast\t Rost\t Ves\t Objemy\t English\n" << endl;
+	// вывод строки-заголовка
+	cout << "\n-------------------------\n" << endl;
+	for (i = 0; i < 5; i++)
+	{
+		cout << "%s\t %u\t %u\t %u\t %u\t %u\t %u\t %c\n " << endl, // ne vivodit normalno
+			A[i].Name, A[i].Year, A[i].Rost, A[i].Ves, A[i].Ob.Ob1, A[i].Ob.Ob2, A[i].Ob.Ob3, A[i].Angl;
+	}
+}
