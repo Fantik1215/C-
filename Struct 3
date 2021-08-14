@@ -1,0 +1,69 @@
+#include <iostream>
+#include <windows.h>
+#include <clocale>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "rus"); // podsvechivalas
+	struct Person
+	{
+		string Name;
+		string Profession;
+		unsigned int Year;
+		unsigned int Stag;
+		char Pol;
+	}  A[5];
+	int  i, k;
+	for (i = 0; i < 5; i++)
+	{
+		cout << "Введите фамилию:\n" << endl;
+		cin >> A[i].Name;
+		cout << endl;
+		cout << "Введите должность:\n" << endl;
+		cin >> A[i].Profession;
+		cout << endl;
+		cout << "Введите год рождения:\n" << endl;
+		scanf("%u", &A[i].Year); // kak zamenit ?
+		cout << "Введите стаж:\n" << endl;
+		scanf("%u", &A[i].Stag);// kak zamenit ?
+		cout << "Введите пол (м/ж):\n" << endl;
+		//A[i].Pol = getch();
+		cout << A[i].Pol << endl;
+		cout << "\n-----------------------\n" << endl;
+	}
+	cout << "\n фамилия\t должность\t год\t стаж\t пол\n" << endl;
+	// вывод строки-заголовка
+	cout << "\n-------------------------\n" << endl;
+	for (i = 0; i < 5; i++)
+	{
+		cout << "%s\t %s\t %u\t %u\t %c\n" << endl,
+			A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
+	}
+	for (i = 0; i < 5; i++)
+	{
+		if (A[i].Stag < 5)
+			cout << "%s\t %s\t %u\t %u\t %c\n" ,
+				A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
+	}
+	for (i = 0; i < 5; i++)
+	{
+		if (A[i].Pol == 'ж' && 2019 - A[i].Year >= 55 ||
+			A[i].Pol == 'м' && 2019 - A[i].Year >= 60)
+
+			cout << "%s\t %s\t %u\t %u\t %c\n",
+				A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
+	}
+	int S = 0; k = 0;
+	float Sr;
+	for (i = 0; i < 5; i++)
+	{
+		if (A[i].Pol == 'м')
+		{
+			S += 2019 - A[i].Year;
+			k++;
+		}
+	}
+	Sr = (float)S / k;
+	cout << "Средний возраст мужчин %0.1f", Sr ;//<< endl
+}
