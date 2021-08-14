@@ -5,7 +5,7 @@ using namespace std;
 
 void main()
 {
-	setlocale(LC_ALL, "rus"); // podsvechivalas
+	setlocale(LC_ALL, "rus");
 	struct Person
 	{
 		string Name;
@@ -24,12 +24,12 @@ void main()
 		cin >> A[i].Profession;
 		cout << endl;
 		cout << "Введите год рождения:\n" << endl;
-		scanf("%u", &A[i].Year); // kak zamenit ?
+		cin >> A[i].Year; // kak zamenit ?
 		cout << "Введите стаж:\n" << endl;
-		scanf("%u", &A[i].Stag);// kak zamenit ?
+		cin >> A[i].Stag;// kak zamenit ?
 		cout << "Введите пол (м/ж):\n" << endl;
 		//A[i].Pol = getch();
-		cout << A[i].Pol << endl;
+		cin >> A[i].Pol;
 		cout << "\n-----------------------\n" << endl;
 	}
 	cout << "\n фамилия\t должность\t год\t стаж\t пол\n" << endl;
@@ -43,8 +43,8 @@ void main()
 	for (i = 0; i < 5; i++)
 	{
 		if (A[i].Stag < 5)
-			cout << "%s\t %s\t %u\t %u\t %c\n" ,
-				A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
+			cout << "%s\t %s\t %u\t %u\t %c\n",
+			A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
 	}
 	for (i = 0; i < 5; i++)
 	{
@@ -52,7 +52,7 @@ void main()
 			A[i].Pol == 'м' && 2019 - A[i].Year >= 60)
 
 			cout << "%s\t %s\t %u\t %u\t %c\n",
-				A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
+			A[i].Name, A[i].Profession, A[i].Year, A[i].Stag, A[i].Pol;
 	}
 	int S = 0; k = 0;
 	float Sr;
@@ -65,5 +65,6 @@ void main()
 		}
 	}
 	Sr = (float)S / k;
-	cout << "Средний возраст мужчин %0.1f", Sr ;//<< endl
+	cout << "Средний возраст мужчин %0.1f", Sr;//<< endl
 }
+
