@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+#include <clocale>
+using namespace std;
+
+
+int main()
+{
+    struct Sportmen
+    {
+        string Name;
+        int Year;
+        int Y_in_s;
+        union dostigenia {
+            int jump;
+            int stom;
+            int podt;
+        }myUnion;
+    }A[3];
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Enter name of sportsmen" << endl;
+        cin >> A[i].Name;
+        cout << "Enter year of sportsmen" << endl;
+        cin >> A[i].Year;
+        cout << "Enter year in sport of sportsmen" << endl;
+        cin >> A[i].Y_in_s;
+        cout << "Enter dostigenya in sport of sportsmen" << endl;
+        cin >> A[i].myUnion.jump;
+        cin >> A[i].myUnion.podt;
+        cin >> A[i].myUnion.stom;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Name:" << A[i].Name << endl;
+        cout << "Year:" << A[i].Year << endl;
+        cout << "Year in sport:" << A[i].Y_in_s << endl;
+        cout << "Dostigenya:" << int(A[i].myUnion.jump) << " " << A[i].myUnion.podt << " " << A[i].myUnion.stom << endl;
+
+    }
+
+
+    return 0;
+}
