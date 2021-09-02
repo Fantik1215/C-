@@ -1,0 +1,127 @@
+#include <iostream>
+#include <clocale>
+using namespace std;
+
+void zadanie1();
+void zadanie2();
+void zadanie3();
+void zadanie4();
+int main()
+{
+	int a,exitornot = 1;
+	setlocale(LC_ALL, "rus");
+	while (exitornot == 1)
+	{
+		cout << "Выберите задание:" << endl
+			<< "1" << endl
+			<< "2" << endl
+			<< "3" << endl
+			<< "4" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case(1):
+			zadanie1();
+			break;
+		case(2):
+			zadanie2();
+			break;
+		case(3):
+			zadanie3();
+			break;
+		case(4):
+			zadanie4();
+			break;
+		default:
+			cout << "Выбранного вами задания несуществует" << endl;
+		}
+		cout << "Желаете ли продолжить ? 0-нет/1-да" << endl;
+		do
+		{
+			cin >> exitornot;
+		} while (exitornot != 0 && exitornot != 1);
+		cout << endl;
+	}
+	
+}
+void zadanie1()
+{
+	float q , w , e , r ;
+	cout << "Введите вещественные числа" << endl;
+	cin >> q;
+	cin >> w;
+	cin >> e;
+	cin >> r;
+	float *pq = &q;
+	float *pw = &w;
+	float *pe = &e;
+	float *pr = &r;
+	float *pp1, *pp2, *pp3;
+	cout << "----------------------------------------------" << endl
+		<< "До преоброзования" << endl
+		<< *pq << endl
+		<< *pw << endl
+		<< *pe << endl
+		<< *pr << endl
+		<< "----------------------------------------------" << endl;
+	*pr = *pq + *pw + *pe + *pr;
+	*pe = *pq + *pw + *pe;
+	*pw = *pq + *pw;
+	cout << "----------------------------------------------" << endl
+		<< "После преоброзования" << endl
+		<< *pq << endl
+		<< *pw << endl
+		<< *pe << endl
+		<< *pr << endl
+		<< "----------------------------------------------" << endl;
+}
+void zadanie2()
+{
+	const int size = 20;
+	int mass[size];
+	cout << "Ввод рандомных чисел в массив" << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		mass[i] = rand() % 40 + 1;
+		cout << mass[i] << " ";
+	}
+	int* p;
+	p = mass;
+	cout << endl;
+	cout << *p << endl;
+	p = &mass[0 + *p];
+	cout << *p << endl;
+}
+void zadanie3()
+{
+	int a;
+	char b;
+	bool c;
+	short d;
+	long e;
+	float f;
+	double g;
+	long double h;
+	int i;
+	cout << "Адресса:" << endl
+		<< "int:" << &a << endl
+		<< "char:" << &b << endl
+		<< "bool:" << &c << endl
+		<< "short:" << &d << endl
+		<< "long:" << &e << endl
+		<< "float:" << &f << endl
+		<< "double:" << &g << endl
+		<< "long double:" << &h << endl
+		<< "int:" << &i << endl;
+}
+void zadanie4()
+{
+	float z; const float *pz;
+	long int x; void *px;
+	double c, *pc;
+	short int v, *pv;
+	const float b = 1, *pb;
+	const char n = 'a'; char *pn;
+	double m; const double *pm;
+	unsigned int l; void *pl;
+}
